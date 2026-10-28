@@ -20,3 +20,69 @@
 .institution-logo{height:85px;display:flex;align-items:center;justify-content:center}
 .institution-logo img{width:100%;max-width:250px;max-height:80px;object-fit:contain;display:block}
 @media(max-width:780px){.science h2{font-size:43px}.science-context{font-size:12px}.institutions{grid-template-columns:1fr;gap:36px;padding-top:45px;padding-bottom:45px}.institution-logo{height:65px}.institution-logo img{max-width:235px;max-height:70px}.institutions small{font-size:9px;margin-bottom:15px}.event-strip strong{font-size:10px}.event-strip>.wrap{grid-template-columns:1fr 1.1fr}.rio-details{gap:24px}.rio-content>.venue-address{max-width:300px!important;line-height:1.8}}
+
+/* Legibilidade — textos, navegação e controles */
+.about-copy>p:not(.lead),.sponsor-grid>div>p:not(.lead),
+.pillars p,.science-heading>div>p:not(.lead),.science-context,
+.section-intro,.experience-list article p,.rio-content>p:not(.eyebrow),
+.registration p,.hero-desc{font-size:16px;line-height:1.75}
+.rio-content>.venue-address{font-size:16px!important;line-height:1.75}
+.hero-desc{max-width:530px}
+.header nav,.header-cta,.button,.text-link,.inline-link,
+.event-strip a,.topics span,.science-note,.science-note p,
+.science-note strong,.sponsor-values span,.status-pill,.back-top{font-size:14px}
+.header nav{gap:26px}
+.button{min-height:52px}
+.hero-meta,.eyebrow,.hero .eyebrow,.section-label,.topics-label,
+.event-strip small,.pillar-num,.experience-list article>span,
+.rio .eyebrow,.rio-details small,.registration .eyebrow,
+.institutions small,.photo-caption,.slide-counter{font-size:12px}
+.event-strip strong,.rio-details strong{font-size:16px;line-height:1.5}
+.event-strip small,.rio-details small{line-height:1.6}
+.event-strip>.wrap{gap:28px}
+.event-strip>.wrap>span{max-width:350px}
+.hero-meta{flex-wrap:wrap;letter-spacing:1.2px}
+.slide-counter{letter-spacing:1px}
+.dot{position:relative}
+.dot:before{content:'';position:absolute;inset:-12px -5px}
+.carousel-controls>button{width:36px;height:36px;font-size:16px}
+.science-note{flex-wrap:wrap;line-height:1.7}
+.footer-main p{font-size:14px;line-height:1.7}
+.footer-main p strong{font-size:18px}
+.footer-bottom{font-size:12px;line-height:1.7}
+.photo-caption{line-height:1.7;letter-spacing:1px}
+.pillars p{max-width:330px}
+.section-intro{max-width:400px}
+.rio-content>p:not(.eyebrow){max-width:560px}
+.experience-list article p{max-width:420px}
+@media(max-width:1100px){.header{gap:24px}.header nav{gap:20px}.header-cta{font-size:14px}.science-heading,.about-grid,.sponsor-grid,.experience-grid{gap:45px}}
+@media(max-width:1000px){
+ .header{padding:12px 24px;gap:18px}.brand{width:155px}
+ .header-cta{margin-left:auto}.menu{display:block;border:0;background:none;color:var(--navy);font-size:24px;padding:8px}
+ .header nav{display:none;position:absolute;left:0;right:0;top:100px;background:#fff;padding:20px 24px;box-shadow:0 15px 25px #0001;gap:0}
+ .header nav.open{display:flex;flex-direction:column}.header nav a{font-size:16px;padding:14px}
+}
+@media(max-width:780px){
+ .header{height:80px;padding:10px 16px;gap:10px}.brand{width:112px}
+ .header-cta{font-size:14px;padding:12px 10px;letter-spacing:-.3px}.header nav{top:80px}.menu{padding:6px;font-size:22px}
+ .hero-meta{font-size:12px;letter-spacing:.5px;gap:7px;line-height:1.7}
+ .hero .eyebrow{font-size:12px;max-width:330px;letter-spacing:1.2px;line-height:1.7}
+ .slides{margin-top:42px;min-height:545px}.alternate-title{font-size:90px}
+ .hero-desc{font-size:16px;max-width:340px}.hero-desc br{display:none}
+ .actions{gap:14px 22px}.button,.text-link{font-size:14px}
+ .section-label{font-size:12px;letter-spacing:1px;line-height:1.7;gap:12px}.small-line{width:35px;flex-shrink:0}
+ .event-strip>.wrap{grid-template-columns:1fr;gap:22px}.event-strip>.wrap>span{max-width:none}
+ .event-strip small{font-size:12px;margin-bottom:5px}.event-strip strong{font-size:16px}
+ .science-note p,.science-note strong{font-size:14px}.science-note strong{margin-left:18px}
+ .topics span{font-size:14px;line-height:1.5;padding:11px 13px}
+ .topics-label,.rio .eyebrow,.registration .eyebrow{font-size:12px;letter-spacing:1px;line-height:1.7}
+ .experience-list article{gap:14px}.experience-list article>span{font-size:12px}
+ .experience-list article h3{font-size:21px;line-height:1.35}
+ .rio-content>p:not(.eyebrow){max-width:340px}.rio-details{flex-direction:column;gap:24px}
+ .rio-details small{font-size:12px}.rio-details strong{font-size:16px}
+ .rio-content>.venue-address{max-width:340px!important;font-size:16px!important}
+ .sponsor-values span,.status-pill{font-size:14px}
+ .institutions small{font-size:12px}
+ .footer-main{align-items:flex-start}.footer-main p{font-size:14px}.footer-main p strong{font-size:18px}
+ .back-top{font-size:14px}.footer-bottom{font-size:12px;gap:14px}
+}
