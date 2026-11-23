@@ -86,3 +86,91 @@
  .footer-main{align-items:flex-start}.footer-main p{font-size:14px}.footer-main p strong{font-size:18px}
  .back-top{font-size:14px}.footer-bottom{font-size:12px;gap:14px}
 }
+
+/* Prévia local — comissão e consulta de inscrições */
+.committee{background:#f3f6f8}
+.committee-grid{display:grid;grid-template-columns:.85fr 1.3fr;gap:60px;align-items:center}
+.committee-intro h2{font-size:clamp(38px,4vw,58px);margin-bottom:28px}
+.committee blockquote{margin:0;padding:28px 30px;background:white;border-radius:12px;position:relative;border:1px solid #e8edf2}
+.committee blockquote>p{font-size:16px;line-height:1.8;margin-bottom:24px;color:#415775}
+.quote-mark{position:absolute;right:22px;top:-25px;font-family:Georgia,serif;font-size:80px;line-height:1;color:var(--orange)}
+.committee blockquote footer{background:none;border:0;display:flex;flex-direction:column;gap:7px}
+.committee blockquote footer strong{font-size:15px;font-weight:650}
+.committee blockquote footer span{font-size:13px;color:#b56900}
+.committee-members{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.member-card{overflow:hidden;background:#fff;border-radius:14px;border:1px solid #dce4ed;box-shadow:0 14px 32px #0924480c}
+.member-portrait{aspect-ratio:230 / 274;background-image:url('assets/commission-reference.png');background-size:671.30435% auto;background-repeat:no-repeat;background-color:#dfe8ed}
+.member-portrait.adriana{background-position:59.2085% 42.9708%}
+.member-portrait.gina{background-position:78.6149% 42.9708%}
+.member-portrait.helena{background-position:98.0213% 42.9708%}
+.member-caption{padding:21px 17px 24px;border-top:3px solid var(--orange)}
+.member-caption h3{font-size:18px;line-height:1.3;letter-spacing:-.4px;margin-bottom:9px;font-weight:650}
+.member-caption p{font-size:12px;line-height:1.6;color:#647086;margin:0}
+.pricing-section{padding:85px 0 65px}
+.pricing-wrap{position:relative;z-index:1}
+.pricing-heading{display:flex;justify-content:space-between;gap:40px;align-items:center;margin-bottom:44px}
+.pricing-heading .eyebrow{color:#9bb7d0;font-size:12px}
+.pricing-heading h2{margin-bottom:22px}
+.pricing-heading>div>p:not(.eyebrow){font-size:15px;color:#b1c5d6}
+.registration-status{display:flex;flex-direction:column;gap:10px;flex-shrink:0;padding-top:30px}
+.registration-status .status-pill{margin:0;font-size:15px}
+#current-lot-label{font-size:13px;color:#a1b8cd}
+.category-selector{margin-bottom:24px}
+.pricing-label{font-size:11px!important;letter-spacing:1.8px;line-height:1.7;color:#a9bdd2;margin:0 0 15px!important;font-weight:500}
+.category-options{display:flex;flex-wrap:wrap;gap:10px}
+.category-option{border:1px solid #60718b;background:#ffffff06;border-radius:40px;color:#d9e6f1;font-size:14px;font-weight:550;min-height:45px;padding:12px 20px;transition:background .2s,border-color .2s}
+.category-option:hover{background:#ffffff12;border-color:#a2bfd5}
+.category-option.active{background:white;color:var(--navy);border-color:white}
+.price-panel{border:1px solid #355070;background:linear-gradient(135deg,#102b53,#092243);border-radius:18px;padding:36px}
+.price-summary{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;min-height:170px}
+.selected-price{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;font-size:clamp(60px,6.5vw,90px);line-height:1.06;letter-spacing:-1px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.payment-detail{font-size:14px!important;color:#78e9cc!important;line-height:1.7;margin:12px 0 0!important;max-width:560px}
+.saving-box{background:#6cf1ce0a;border:1px solid #3e8c84;min-width:210px;border-radius:14px;padding:20px 25px;text-align:center;display:flex;flex-direction:column;gap:7px;margin-top:2px}
+.saving-label{font-size:11px;letter-spacing:1.6px;font-weight:650;color:#83efd0}
+.saving-box>strong{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:36px;letter-spacing:-.5px;line-height:1.1;color:white;font-variant-numeric:tabular-nums}
+.saving-box>span:last-child{font-size:12px;color:#bdd0dd;line-height:1.5}
+.saving-box.no-saving{border-color:#5a7190;background:#ffffff05}
+.saving-box.no-saving .saving-label{color:#b0c7dc}
+.saving-box.no-saving>strong{font-size:27px}
+.lot-section{border-top:1px solid #ffffff19;padding-top:25px;margin-top:22px}
+.lot-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.lot-option{position:relative;display:flex;flex-direction:column;gap:9px;padding:20px 22px 23px;border-radius:12px;border:1px solid #405574;color:white;background:#ffffff03;text-align:left;min-height:146px;transition:border-color .2s,background .2s}
+.lot-option:hover{background:#ffffff0a;border-color:#9bb5ca}
+.lot-option.active{border-color:#ffb21e;background:#ffb21e0c;box-shadow:0 0 0 1px #ffb21e40}
+.lot-name{font-size:11px;letter-spacing:1.4px;color:#b3c8db;line-height:1.6;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.lot-badge{display:inline-block;font-size:9px;letter-spacing:.8px;padding:3px 7px;border-radius:20px;background:#8ce8d0;color:#032444;font-weight:700}
+.lot-price{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:33px;line-height:1.2;font-weight:600;letter-spacing:-.4px;font-variant-numeric:tabular-nums}
+.lot-deadline{font-size:13px;color:#acbfd3}
+.lot-selected{position:absolute;right:16px;bottom:20px;display:none;color:#ffc14a;font-size:18px}
+.lot-option.active .lot-selected{display:block}
+.pricing-footer{display:flex;justify-content:space-between;align-items:center;gap:35px;padding-top:28px}
+.pricing-footer p{font-size:12px!important;color:#a6bdd0;line-height:1.8;max-width:500px;margin:0}
+.pricing-footer .button{flex-shrink:0}
+.pricing-bottom{display:flex;align-items:center;justify-content:space-between;gap:35px;padding-top:23px}
+.pricing-bottom p{font-size:12px!important;line-height:1.8;color:#91acc5;max-width:670px}
+.calendar-link{display:inline-flex;gap:15px;align-items:center;flex-shrink:0;background:none;border:0;border-bottom:1px solid #627a93;padding:10px 0;color:#d2e1ed;font-size:12px}
+.category-option:focus-visible,.lot-option:focus-visible,.calendar-link:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+@media(max-width:1200px){.committee-grid{grid-template-columns:1fr;gap:35px}.committee-intro{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}.committee-intro h2{font-size:48px}.committee-members{gap:24px;max-width:850px}.member-caption h3{font-size:21px}.price-summary{min-height:160px}.pricing-heading{gap:25px}.registration-status{max-width:220px}}
+@media(max-width:780px){
+ .committee-intro{display:block}.committee-intro h2{font-size:43px}.committee blockquote{padding:26px 22px}.committee blockquote>p{font-size:16px}.committee-grid{gap:32px}
+ .committee-members{grid-template-columns:1fr;gap:18px}.member-card{display:grid;grid-template-columns:128px minmax(0,1fr);align-items:stretch;border-radius:12px}.member-caption{border-top:0;border-left:3px solid var(--orange);padding:22px 18px;display:flex;flex-direction:column;justify-content:center}.member-caption h3{font-size:21px}.member-caption p{font-size:13px}.member-portrait{height:100%;min-height:165px;aspect-ratio:230 / 274}
+ .pricing-section{padding:65px 0 50px}.pricing-heading{display:block;margin-bottom:30px}.pricing-heading h2{font-size:43px}.pricing-heading>div>p:not(.eyebrow){font-size:14px;line-height:1.8}.registration-status{max-width:none;padding-top:24px;gap:8px}
+ .category-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.category-option{padding:12px 10px;font-size:12px;line-height:1.5;min-height:52px;border-radius:10px}
+ .price-panel{padding:25px 20px;border-radius:15px}.price-summary{display:block;min-height:0}.selected-price{font-size:64px;letter-spacing:-.8px}.pricing-label{font-size:10px!important;letter-spacing:1.3px}.payment-detail{font-size:13px!important}
+ .saving-box{margin-top:25px;min-width:0;display:grid;grid-template-columns:1fr auto;text-align:left;padding:17px;gap:7px 10px;align-items:center}.saving-label{font-size:10px;letter-spacing:1px}.saving-box>strong{font-size:31px;grid-row:span 2}.saving-box>span:last-child{font-size:11px}.saving-box.no-saving>strong{font-size:23px}
+ .lot-section{margin-top:26px;padding-top:23px}.lot-options{grid-template-columns:1fr;gap:10px}.lot-option{min-height:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:18px;gap:6px 12px}.lot-name{grid-column:1;justify-content:flex-start;font-size:11px}.lot-price{grid-column:2;grid-row:1 / span 2;text-align:right;font-size:29px;padding-right:10px}.lot-deadline{grid-column:1;font-size:12px}.lot-selected{bottom:auto;top:12px;right:9px;font-size:12px}.lot-badge{font-size:8px;padding:2px 5px}
+ .pricing-footer{display:block;padding-top:24px}.pricing-footer p{font-size:12px!important}.pricing-footer .button{margin-top:23px;width:100%}.pricing-bottom{display:block;padding-top:22px}.pricing-bottom p{font-size:12px!important;margin-bottom:12px}.calendar-link{font-size:13px}
+}
+
+/* Tipografia da consulta acompanha a legibilidade do restante do site. */
+.pricing-label{font-size:12px!important}
+.saving-label{font-size:12px;letter-spacing:1px}
+.lot-name{font-size:12px;letter-spacing:1px}
+.lot-badge{font-size:10px}
+@media(max-width:780px){.category-option{font-size:14px;min-height:64px}.saving-label,.saving-box>span:last-child{font-size:12px}.lot-name{font-size:12px;flex-wrap:wrap;gap:4px 8px}.lot-badge{font-size:9px}.member-portrait{min-height:0}}
+
+.member-caption{min-height:135px}.member-caption h3{min-height:47px}
+@media(max-width:1200px) and (min-width:781px){.member-caption h3{min-height:55px}}
+@media(max-width:780px){.member-caption{min-height:0}.member-caption h3{min-height:0}}
+
+@media(max-width:780px){.selected-price{font-size:clamp(46px,15vw,62px)}.saving-box.no-saving{display:flex;flex-direction:column;align-items:flex-start}.saving-box.no-saving>strong{font-size:27px}}

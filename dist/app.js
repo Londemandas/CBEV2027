@@ -50,3 +50,59 @@ document.querySelector('#calendar').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([ics], {type: 'text/calendar;charset=utf-8'}));
   const link = document.createElement('a'); link.href = url; link.download = 'CBEV-2027.ics'; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
+
+
+// Consulta de categorias e lotes. Valores fornecidos no briefing de novembro/2026.
+const registrationCategories = {
+  member: {label: 'Sócios SBACV', prices: [800, 950, 1200], firstLotFee: 80, firstLotInstallment: 91.01},
+  residentMember: {label: 'Residente sócio SBACV', prices: [400, 425, 600], firstLotFee: 40, firstLotInstallment: 45.51},
+  nonMember: {label: 'Não-sócios', prices: [1400, 1500, 1600], firstLotFee: 140, firstLotInstallment: 159.27},
+  residentNonMember: {label: 'Residente não sócio', prices: [700, 750, 800], firstLotFee: 70, firstLotInstallment: 79.64}
+};
+const registrationDeadlines = ['30/04/2027', '31/08/2027', '04/09/2027'];
+const registrationEndDays = ['2027-04-30', '2027-08-31', '2027-09-04'];
+const registrationDay = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Sao_Paulo', year:'numeric', month:'2-digit', day:'2-digit'}).format(new Date());
+const currentRegistrationLot = registrationEndDays.findIndex(day => registrationDay <= day);
+const registrationCurrency = new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'});
+const categoryButtons = [...document.querySelectorAll('[data-category]')];
+const lotButtons = [...document.querySelectorAll('[data-lot]')];
+let selectedRegistrationCategory = 'member';
+let selectedRegistrationLot = currentRegistrationLot < 0 ? 2 : currentRegistrationLot;
+function updateRegistration() {
+  const category = registrationCategories[selectedRegistrationCategory];
+  const price = category.prices[selectedRegistrationLot];
+  const savings = category.prices[2] - price;
+  categoryButtons.forEach(button => {
+    const active = button.dataset.category === selectedRegistrationCategory;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  lotButtons.forEach((button, index) => {
+    const active = index === selectedRegistrationLot;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+    button.querySelector('.lot-price').textContent = registrationCurrency.format(category.prices[index]);
+    button.setAttribute('aria-label', `${index + 1}º lote: ${registrationCurrency.format(category.prices[index])}, até ${registrationDeadlines[index]}`);
+    const oldBadge = button.querySelector('.lot-badge');
+    if (oldBadge) oldBadge.remove();
+    if (index === currentRegistrationLot) {
+      const badge = document.createElement('span'); badge.className = 'lot-badge'; badge.textContent = 'VIGENTE';
+      button.querySelector('.lot-name').append(badge);
+    }
+  });
+  document.querySelector('#selected-price-label').textContent = `${category.label.toUpperCase()} · ${selectedRegistrationLot + 1}º LOTE`;
+  document.querySelector('#selected-price').textContent = registrationCurrency.format(price);
+  document.querySelector('#payment-detail').textContent = selectedRegistrationLot === 0
+    ? `+ ${registrationCurrency.format(category.firstLotFee)} de taxa · ou 12x de ${registrationCurrency.format(category.firstLotInstallment)}`
+    : 'Consulte taxas e condições de parcelamento na Sympla.';
+  document.querySelector('#saving-box').classList.toggle('no-saving', savings === 0);
+  document.querySelector('#saving-label').textContent = savings > 0 ? 'VOCÊ ECONOMIZA' : '3º LOTE';
+  document.querySelector('#saving-amount').textContent = savings > 0 ? registrationCurrency.format(savings) : 'Valor de referência';
+  document.querySelector('#saving-detail').textContent = savings > 0 ? 'em relação ao 3º lote' : 'sem economia nesta comparação';
+  document.querySelector('#current-lot-label').textContent = currentRegistrationLot < 0
+    ? 'Período informado de inscrições encerrado'
+    : `${currentRegistrationLot + 1}º lote vigente até ${registrationDeadlines[currentRegistrationLot]}`;
+}
+categoryButtons.forEach(button => button.addEventListener('click', () => { selectedRegistrationCategory = button.dataset.category; updateRegistration(); }));
+lotButtons.forEach(button => button.addEventListener('click', () => { selectedRegistrationLot = Number(button.dataset.lot); updateRegistration(); }));
+updateRegistration();
